@@ -27,6 +27,13 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'teslaluo@gmail.com'
+EMAIL_HOST_PASSWORD = 'Lj19930730'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
+
 
 # Application definition
 
@@ -120,3 +127,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/dev/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATIC_ROOT = os.path.join(BASE_DIR,"static_in_env","static_root")
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR,"static_in_pro","our_static"),
+)
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR,"static_in_env","media_root")
