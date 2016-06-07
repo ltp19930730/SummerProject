@@ -14,42 +14,65 @@
 
 
 
-<div class="home-top-splash ud-angular-loaded" data-module-id="ng-root/directives/common/fields/search-suggestions-field-directive" data-module-name="directives.common.fields.searchSuggestionsFieldDirective">
-        <h1 class="heading">您的生活会选择什么课程？</h1>
-        <div class="subhead">
-            在线学习新技能，掌控自己的未来
-        </div>
-        <script type="text/javascript">
-            UD.performance.mark('Homepage.search-rendered');
-        </script>
-        <div search-suggestions-field="" class="search--home">
-            <form action="/courses/search/" class="form pos-r fxac ng-pristine ng-valid">
-                <input type="hidden" name="ref" value="home">
-                <input type="hidden" name="src" value="ukw">
-                <div class="search-inp-container fx">
-                    <input type="search" name="q" class="search-field form-control quick-search ng-pristine ng-valid ng-touched user-success" placeholder="找到关于几乎任何科目的课程" autocomplete="off" data-perf-mark="Homepage.search-ready" ng-keydown="hotkey($event)" ng-model="searchPhrase" ng-change="suggest()">
-                </div>
-                <button type="submit" class="home-search-btn">
-                    <i class="icon-search"></i>
-                </button>
-            </form>
-        <!-- ngInclude: dropdownTemplate --><div class="dropdown" ng-class="{open: showSuggestions}" ng-include="dropdownTemplate"><ul class="dropdown-menu ui-autocomplete quick-search-dropdown-v4" role="menu" aria-labelledby="dlabel" data-purpose="search-suggestion-list">
-    <!-- ngRepeat: suggestion in suggestions -->
-</ul></div></div>
-        <ul class="fxjc features">
-            <li class="fxac">
-                <i class="icon-group"></i>
-                <span class="desc">1 千 1 百多万名学生</span>
-            </li>
-            <li class="fxac">
-                <i class="icon-rocket"></i>
-                <span class="desc">40,000 多门课程</span>
-            </li>
-            <li class="fxac">
-                <i class="icon-mobile-phone"></i>
-                <span class="desc">在任何设备上按照您自己的节奏学习</span>
-            </li>
-        </ul>
-    </div>
+                  <div class="home-top fxac">
+
+                       <div class="pos-a w100p h100p zi-1 top0">
+                           <div id="carousel-home" class="carousel slide carousel-fade h100p" data-ride="carousel" data-interval="5000" data-pause="false">
+
+                               <!-- Wrapper for slides -->
+                               <div class="carousel-inner h100p">
+                                   <div class="item active h100p">
+                                     <img src="{% static 'images/slider/MOOC.jpg' %}" alt="" class="item-inner h100p w100p bgpc bgsc" data-parallax-speed="4" data-parallax-type="background">
+                                       </div>
+
+                                   <div class="item h100p">
+                                     <img src="{% static 'images/slider/book.jpg' %}" alt="" class="item-inner h100p w100p bgpc bgsc" data-parallax-speed="4" data-parallax-type="background">
+                                   </div>
+                               </div>
+                           </div>
+                       </div>
+
+
+
+
+
+
+                       <div class="home-top-splash ud-angular-loaded" data-module-id="ng-root/directives/common/fields/search-suggestions-field-directive" data-module-name="directives.common.fields.searchSuggestionsFieldDirective">
+                           <h1 class="heading">Choose what's course you want!</h1>
+                           <div class="subhead">
+                               Massive online open courses
+
+                           </div>
+                           <script type="text/javascript">
+                               UD.performance.mark('Homepage.search-rendered');
+                           </script>
+                           <div search-suggestions-field="" class="search--home">
+                               <form action="/courses/search/" class="form pos-r fxac ng-pristine ng-valid">
+                                   <input type="hidden" name="ref" value="home">
+                                   <input type="hidden" name="src" value="ukw">
+                                   <div class="search-inp-container fx">
+                                       <input type="search" name="q" class="search-field form-control quick-search ng-pristine ng-valid ng-touched user-success" placeholder="find out the free open course" autocomplete="off" data-perf-mark="Homepage.search-ready" ng-keydown="hotkey($event)" ng-model="searchPhrase" ng-change="suggest()">
+                                   </div>
+                                   <button type="submit" class="home-search-btn">
+                                       <i class="icon-search"></i>
+                                   </button>
+                               </form>
+                           <!-- ngInclude: dropdownTemplate --><div class="dropdown" ng-class="{open: showSuggestions}" ng-include="dropdownTemplate"><ul class="dropdown-menu ui-autocomplete quick-search-dropdown-v4" role="menu" aria-labelledby="dlabel" data-purpose="search-suggestion-list">
+                       <!-- ngRepeat: suggestion in suggestions -->
+                     </ul></div></div>
+                           <ul class="fxjc features">
+                               <li class="fxac">
+                                   <i class="fa fa-graduation-cap"></i>
+                                   <span class="desc">Massive open souce </span>
+                               </li>
+                               <li class="fxac">
+                                   <i class="fa fa-university"></i>
+                                   <span class="desc">different platform and university </span>
+                               </li>
+
+                           </ul>
+                       </div>
+                   </div>
+                   <h1>hahaha</h1>
 </body>
 </html>
