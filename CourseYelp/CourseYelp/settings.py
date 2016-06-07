@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     #my apps
     'Homepage',
     'webapp',
+    'SearchCourse',
     #third party apps
     'crispy_forms',
     #django apps

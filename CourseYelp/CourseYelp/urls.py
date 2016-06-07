@@ -17,14 +17,13 @@ from django.conf import settings
 from django.conf.urls import url , include
 from django.conf.urls.static import static
 from django.contrib import admin
-from Homepage import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^webapp/', include('webapp.urls')),
-    url(r'^$', views.home, name ='home'),
-    url(r'^contact/$', views.contact, name ='contact'),
-    #url(r'^$', include('Homepage.urls')),
+    url(r'^contact/', include('SearchCourse.urls')),
+    url(r'^result', include('SearchCourse.urls')),
+    url(r'^home', include('Homepage.urls')),
 ]
 
 if settings.DEBUG:
