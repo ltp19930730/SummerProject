@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-# from . import models
+from .models import CourseData
 #
 #
-#  admin.site.register(models.CourseData)
+admin.site.register(CourseData)

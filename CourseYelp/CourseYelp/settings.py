@@ -42,8 +42,10 @@ INSTALLED_APPS = [
     'Homepage',
     'webapp',
     'SearchCourse',
+    'Rates',
     #third party apps
     'crispy_forms',
+    'django_admin_bootstrapped',
     #django apps
     'django.contrib.admin',
     'django.contrib.auth',

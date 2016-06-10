@@ -21,9 +21,10 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^webapp/', include('webapp.urls')),
-    url(r'^contact/', include('SearchCourse.urls')),
+    # url(r'^contact/', include('SearchCourse.urls')),
     url(r'^result', include('SearchCourse.urls')),
     url(r'^home', include('Homepage.urls')),
+    url(r'^rating', include('Rates.urls')),
 ]
 
 if settings.DEBUG:

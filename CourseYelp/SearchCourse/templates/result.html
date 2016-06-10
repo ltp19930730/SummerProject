@@ -1,0 +1,19 @@
+{% extends "base_result.html" %}
+
+{% block content %}
+
+    {% for post in post_list %}
+
+        <div class="jumbotron">
+            <h2>{{ post.course_name }}</h2>
+            <h3>{{ post.course_platform }}</h3>
+            <p>{{ post.course_intro }}</p>
+            <p><a class="btn btn-primary btn-lg" href={{post.course_homepage_url}} role="button">homepage</a>
+            <a class="btn btn-primary btn-lg" href={{post.course_video_url}} role="button">video</a></p>
+          </div>
+
+
+
+    {% endfor %}
+
+{% endblock %}
