@@ -20,6 +20,7 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^accounts/', include('registration.backends.default.urls')),
     # url(r'^contact/', include('SearchCourse.urls')),
 
     url(r'^home/$','Homepage.views.home', name = 'home'),

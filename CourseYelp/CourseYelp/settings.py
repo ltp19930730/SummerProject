@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     #third party apps
     'crispy_forms',
     'django_admin_bootstrapped',
+    'registration',
     #django apps
     'django.contrib.admin',
     'django.contrib.auth',
@@ -52,6 +53,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites'
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -145,3 +147,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR,"static_in_env","media_root")
 
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
+
+ACCOUNT_ACTIVATION_DAYS = 7
+REGISTRATION_AUTO_LOGIN = True
+
+SITE_ID =1
