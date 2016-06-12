@@ -31,7 +31,7 @@ def home(request):
         context = {
             "title" : "Thank you"
         }
-    return render(request,"base.html",context)
+    return render(request,"searchsection.html",context)
 
 def contact(request):
     form = ContactForm(request.POST or None)
@@ -67,3 +67,9 @@ def contact(request):
         "form": form,
     }
     return render(request,"forms.html",context)
+
+def about(request):
+    return render(request,"about.html",{})
+
+def team(request):
+    return render(request,"team.html",{})

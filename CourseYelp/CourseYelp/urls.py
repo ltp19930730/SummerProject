@@ -20,10 +20,12 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^webapp/', include('webapp.urls')),
     # url(r'^contact/', include('SearchCourse.urls')),
 
-    url(r'^home', include('Homepage.urls')),
+    url(r'^home/$','Homepage.views.home', name = 'home'),
+    url(r'^about/$','Homepage.views.about', name = 'about'),
+    url(r'^team/$','Homepage.views.team', name = 'team'),
+    url(r'^contact/$','Homepage.views.contact', name = 'contact'),
     url(r'^rating', include('Rates.urls')),
     url(r'^search/$','SearchCourse.views.web_search', name = 'search'),
     url(r'^archives/$', 'SearchCourse.views.archives', name = 'archives'),

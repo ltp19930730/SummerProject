@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block search %}
+
+<!-- Homepage section
+================================================== -->
+<div class ="home-v4">
+<div class="home-top fxac">
+
+    <div class="pos-a w100p h100p zi-1 top0">
+        <div id="carousel-home" class="carousel slide carousel-fade h100p" data-ride="carousel" data-interval="5000" data-pause="false">
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner h100p">
+                <div class="item active h100p">
+                  <img src="{% static 'images/slider/MOOC.jpg' %}" alt="" class="item-inner h100p w100p bgpc bgsc" data-parallax-speed="4" data-parallax-type="background">
+                    </div>
+
+                <div class="item h100p">
+                  <img src="{% static 'images/slider/book.jpg' %}" alt="" class="item-inner h100p w100p bgpc bgsc" data-parallax-speed="4" data-parallax-type="background">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <div class="home-top-splash ud-angular-loaded" data-module-id="ng-root/directives/common/fields/search-suggestions-field-directive" data-module-name="directives.common.fields.searchSuggestionsFieldDirective">
+        <h1 class="heading">Choose what's course you want!</h1>
+        <div class="subhead">
+            Massive online open courses
+
+        </div>
+        <script type="text/javascript">
+            UD.performance.mark('Homepage.search-rendered');
+        </script>
+        <div search-suggestions-field="" class="search--home">
+            <form action="/search/" class="form pos-r fxac ng-pristine ng-valid" method ="get">
+
+                <div class="search-inp-container fx">
+                    <input type="search" name="s" class="search-field form-control quick-search ng-pristine ng-valid ng-touched user-success" placeholder="find out the free open course" autocomplete="off" data-perf-mark="Homepage.search-ready" ng-keydown="hotkey($event)" ng-model="searchPhrase" ng-change="suggest()">
+                </div>
+                <button type="submit" class="home-search-btn">
+                    <i class="icon-search"></i>
+                </button>
+            </form>
+        <!-- ngInclude: dropdownTemplate --><div class="dropdown" ng-class="{open: showSuggestions}" ng-include="dropdownTemplate"><ul class="dropdown-menu ui-autocomplete quick-search-dropdown-v4" role="menu" aria-labelledby="dlabel" data-purpose="search-suggestion-list">
+    <!-- ngRepeat: suggestion in suggestions -->
+  </ul></div></div>
+        <ul class="fxjc features">
+            <li class="fxac">
+                <i class="fa fa-graduation-cap"></i>
+                <span class="desc">Massive open souce </span>
+            </li>
+            <li class="fxac">
+                <i class="fa fa-university"></i>
+                <span class="desc">different platform and university </span>
+            </li>
+
+        </ul>
+    </div>
+</div>
+</div>
+
+<div class ="home-main">
+
+<!--
+<section id="work" class="parallax-section">
+  <div class="container">
+    <div class="row">
+
+
+
+          {% block content %}
+          {% endblock　%}
+
+    </div>
+  </div>
+</section>
+</div>
+-->
+</div>
+
+
+{% endblock %}
