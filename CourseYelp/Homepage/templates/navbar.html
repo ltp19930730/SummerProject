@@ -17,6 +17,17 @@
         <li><a href="{% url 'team' %}" class="smoothScroll">Team</a></li>
         <li><a href="{% url 'contact' %}" class="smoothScroll">Contact</a></li>
       </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+
+        {% if request.user.is_authenticated %}
+        <li> <a href="{% url 'home' %}" class="smoothScroll">Welcome back {{request.user}} </a></li>
+        <li><a href="{% url 'auth_logout' %}" class="smoothScroll">  Logout</a></li>
+        {% else %}
+        <li><a href="{% url 'auth_login' %}" class="smoothScroll">Login</a></li>
+        <li><a href="{% url 'registration_register' %}" class="smoothScroll">Register</a></li>
+        {% endif %}
+      </ul>
     </div>
   </div>
 </section>
