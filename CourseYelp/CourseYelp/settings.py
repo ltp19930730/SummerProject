@@ -40,7 +40,6 @@ EMAIL_USE_TLS = True
 INSTALLED_APPS = [
     #my apps
     'Homepage',
-    'webapp',
     'SearchCourse',
     'Rates',
     #third party apps
