@@ -13,6 +13,7 @@ def archives(request) :
         raise Http404
     return render(request, 'searchresult.html', {'post_list' : post_list,
                                             'error' : False})
+
 def web_search(request):
     if 's' in request.GET:
         s = request.GET['s']
@@ -27,3 +28,6 @@ def web_search(request):
                 return render(request,'searchresult.html',{'post_list':post_list,
                                                     'error' : False})
     return redirect('/')
+
+def course_detail(request):
+    return HttpResponse("<h1>Detail</h1>")

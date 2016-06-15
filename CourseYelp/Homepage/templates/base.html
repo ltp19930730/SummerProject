@@ -3,47 +3,34 @@
 <html lang="en">
 <head>
   	<meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-  	<meta name="viewport" content="width=device-width, initial-scale=1">
-  	<meta name="keywords" content="">
-  	<meta name="description" content="">
 
   	<!-- Bootstrap CSS
      ================================================== -->
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
-  	<!-- Animate CSS
-     ================================================== -->
-    <link href="{% static 'css/animate.min.css' %}" rel="stylesheet">
+
   	<!-- Font Icons
      ================================================== -->
     <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
-    <link href="{% static 'css/et-line-font.css' %}" rel="stylesheet">
-  	<!-- Nivo Lightbox CSS
-     ================================================== -->
-    <link href="{% static 'css/nivo-lightbox.css' %}" rel="stylesheet">
-    <link href="{% static 'css/nivo_themes/default/default.css' %}" rel="stylesheet">
-  	<!-- Owl Carousel CSS
-     ================================================== -->
-    <link href="{% static 'css/owl.theme.css' %}" rel="stylesheet">
-    <link href="{% static 'css/owl.carousel.css' %}" rel="stylesheet">
-  	<!-- BxSlider CSS
-     ================================================== -->
-    <link href="{% static 'css/bxslider.css' %}" rel="stylesheet">
-     	<!-- Main CSS
-     	================================================== -->
+
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
   	<!-- Google web font
      ================================================== -->
-  	<link href='https://fonts.googleapis.com/css?family=Raleway:700' rel='stylesheet' type='text/css'>
+  	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">
 
     <link rel="stylesheet" media="all" type="text/css" href="https://www.udemy.com/staticx/udemy/css/home.css?v=234540f8d7c08adbc10bf891b7db4dc2d4f4f09e">
 
-    <title> CourseYelp </title>
+    <link rel="stylesheet" type="text/css"  href="{% static 'css/stylesheet.css' %}" media="screen">
+
+    <link rel="stylesheet" type="text/css" href="css/github-light.css" media="screen">
+
+    <title> SeekCourse</title>
+
+
 
 
 </head>
 
-<body data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
+<body>
 
 
   <!-- <section  class="preloader">
@@ -51,8 +38,7 @@
   	<div class="sk-rotating-plane"></div>
 
   </section> -->
-<div class='row' style = "margin-top:80px">
-</div>
+
 
 {% include 'navbar.html' %}
 
@@ -64,6 +50,9 @@
 {% endblock %}
 
 {%block contact %}
+{% endblock %}
+
+{%block ds %}
 {% endblock %}
 
 

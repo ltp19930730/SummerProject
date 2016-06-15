@@ -27,9 +27,9 @@ urlpatterns = [
     url(r'^about/$','Homepage.views.about', name = 'about'),
     url(r'^team/$','Homepage.views.team', name = 'team'),
     url(r'^contact/$','Homepage.views.contact', name = 'contact'),
-    url(r'^rating', include('Rates.urls')),
-    url(r'^search/$','SearchCourse.views.web_search', name = 'search'),
-    url(r'^archives/$', 'SearchCourse.views.archives', name = 'archives'),
+    url(r'^rating/', include('Rates.urls')),
+    url(r'^course/', include('SearchCourse.urls'),name = 'course'),
+
 ]
 
 if settings.DEBUG:
