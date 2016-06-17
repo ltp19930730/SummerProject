@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from SearchCourse.models import CourseData
 # Create your views here.
@@ -8,7 +8,7 @@ from SearchCourse.models import CourseData
 
 def archives(request) :
     try:
-        post_list = CourseData.objects.all()
+        post_list = CourseData.objects.all().order_by('course_name')
     except CourseData.DoesNotExist :
         raise Http404
     return render(request, 'searchresult.html', {'post_list' : post_list,
@@ -18,7 +18,7 @@ def web_search(request):
     if 's' in request.GET:
         s = request.GET['s']
         if not s:
-            return render(request,'base.html')
+            return render(request,'searchsection.html')
         else:
             post_list = CourseData.objects.filter(course_name__icontains = s)
             if len(post_list) == 0 :
@@ -29,5 +29,10 @@ def web_search(request):
                                                     'error' : False})
     return redirect('/')
 
-def course_detail(request):
-    return HttpResponse("<h1>Detail</h1>")
+def course_detail(request,id):
+    instance = get_object_or_404(CourseData,id = id)
+    context = {
+        "title":instance.course_name,
+        "instance":instance,
+    }
+    return render(request,'course_detail.html',context)

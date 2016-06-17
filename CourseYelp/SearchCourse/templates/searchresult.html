@@ -10,7 +10,7 @@
             <div class="col-xs-6 col-md-3">
                 <div class="thumbnail" style="height:350px">
 
-                  <img src = "{{ post.course_imag.url }}" width="180px"  style="margin-top:10px" />
+                  <img src = "{{ post.course_imag.url }}" width="180px"  />
 
 
                   <div class ="caption">
@@ -20,7 +20,7 @@
                     <p>
                       <!-- <a class="btn btn-primary btn-lg" href={{post.course_homepage_url}} role="button">homepage</a>
                     <a class="btn btn-primary btn-lg" href={{post.course_video_url}} role="button">video</a> -->
-                    <a class="btn btn-default" href="#" role="button">View details »</a>
+                    <a class="btn btn-default" href="/course/{{post.id}}" role="button">View details »</a>
                   </p>
                   </div>
                 </div>
