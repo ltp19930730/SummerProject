@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from SearchCourse.models import CourseData
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 # Create your views here.
 
 
@@ -8,10 +9,18 @@ from SearchCourse.models import CourseData
 
 def archives(request) :
     try:
-        post_list = CourseData.objects.all().order_by('course_name')
+        course_list = CourseData.objects.all().order_by('course_name')
+        paginator = Paginator(course_list,8)
+        page = request.GET.get('page')
+        try:
+            course_list = paginator.page(page)
+        except PageNotAnInteger:
+            course_list = paginator.page(1)
+        except EmptyPage:
+            course_list = paginator.paginator(paginator.num_pages)
     except CourseData.DoesNotExist :
         raise Http404
-    return render(request, 'searchresult.html', {'post_list' : post_list,
+    return render(request, 'searchresult.html', {'course_list' : course_list,
                                             'error' : False})
 
 def web_search(request):
@@ -20,12 +29,12 @@ def web_search(request):
         if not s:
             return render(request,'searchsection.html')
         else:
-            post_list = CourseData.objects.filter(course_name__icontains = s)
-            if len(post_list) == 0 :
-                return render(request,'searchresult.html',{'post_list':post_list,
+            course_list = CourseData.objects.filter(course_name__icontains = s)
+            if len(course_list) == 0 :
+                return render(request,'searchresult.html',{'course_list':course_list,
                                                     'error' : True})
             else :
-                return render(request,'searchresult.html',{'post_list':post_list,
+                return render(request,'searchresult.html',{'course_list':course_list,
                                                     'error' : False})
     return redirect('/')
 

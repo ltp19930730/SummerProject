@@ -6,27 +6,42 @@
     {% if error %}
         <h2 >Fail to find the course！</h2>
     {% else %}
-    {% for post in post_list %}
+    {% for course in course_list %}
             <div class="col-xs-6 col-md-3">
                 <div class="thumbnail" style="height:350px">
 
-                  <img src = "{{ post.course_imag.url }}" width="180px"  />
+                  <img src = "{{ course.course_imag.url }}" width="180px"  />
 
 
                   <div class ="caption">
-                    <h4>{{ post.course_name }}</h4>
-                    <p>{{ post.course_platform }}</p>
+                    <h4>{{ course.course_name }}</h4>
+                    <p>{{ course.course_platform }}</p>
                     <!-- <p>{{ post.course_intro }}</p> -->
                     <p>
                       <!-- <a class="btn btn-primary btn-lg" href={{post.course_homepage_url}} role="button">homepage</a>
                     <a class="btn btn-primary btn-lg" href={{post.course_video_url}} role="button">video</a> -->
-                    <a class="btn btn-default" href="/course/{{post.id}}" role="button">View details »</a>
+                    <a class="btn btn-default" href="/course/{{course.id}}" role="button">View details »</a>
                   </p>
                   </div>
                 </div>
           </div>
 
     {% endfor %}
+
+    {% if course_list.object_list and course_list.paginator.num_pages > 1 %}
+      <div>
+      <ul class="pager">
+      {% if course_list.has_previous %}
+        <li><a href="?page={{ course_list.previous_page_number }}">Page Up</a></li>
+      {% endif %}
+
+      {% if course_list.has_next %}
+        <li><a href="?page={{ course_list.next_page_number }}">Page Down</a></li>
+      {% endif %}
+      </ul>
+      </div>
+    {% endif %}
+
     {% endif %}
 
 {% endblock %}
