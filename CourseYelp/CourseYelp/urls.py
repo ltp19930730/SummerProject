@@ -29,7 +29,7 @@ urlpatterns = [
     url(r'^contact/$','Homepage.views.contact', name = 'contact'),
     url(r'^rating/', include('Rates.urls')),
     url(r'^course/', include('SearchCourse.urls'),name = 'course'),
-
+    url(r'^ratings/', include('star_ratings.urls', namespace='ratings', app_name='ratings')),
 ]
 
 if settings.DEBUG:

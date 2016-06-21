@@ -9,7 +9,7 @@
     <link rel="stylesheet"  type="text/css" href="https://www.udemy.com/staticx/udemy/css/home.css?v=234540f8d7c08adbc10bf891b7db4dc2d4f4f09e">
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" >
-    
+
 </head>
 
 <body>
@@ -24,6 +24,35 @@
         </div>
     </div>
 
+<div style="position: fixed;top: 200px;left:30px;">
+  <div class="sidebar-module">
+    <h2>TOPIC</h2>
+    <ul>
+         <li class="refinementImage" style="margin-left: -10px">
+        <a href="/course/search/?s=machine" class=" ">
+          <img height="11" width="11" border="0" align="bottom"
+                        alt="DOTA 2" src="{% static 'images/box.png' %}" />
+              <span >Machine learning</span>
+              </a>
+          </li>
+          <li class="refinementImage" style="margin-left: -10px">
+         <a href="/course/search/?s=algorithm" class=" ">
+           <img height="11" width="11" border="0" align="bottom"
+                         alt="DOTA 2" src="{% static 'images/box.png' %}" />
+               <span >Algorithm</span>
+               </a>
+           </li>
+           <li class="refinementImage" style="margin-left: -10px">
+          <a href="/course/search/?s=" class=" ">
+            <img height="11" width="11" border="0" align="bottom"
+                          alt="DOTA 2" src="{% static 'images/box.png' %}" />
+                <span >Math</span>
+                </a>
+            </li>
+    </ul>
+
+
+  </div>
 
 </body>
 </html>
