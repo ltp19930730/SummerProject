@@ -31,7 +31,7 @@ def home(request):
         context = {
             "title" : "Thank you"
         }
-    return render(request,"searchsection.html",context)
+    return render(request,"home.html",context)
 
 def contact(request):
     title = 'Contact Us'
@@ -72,6 +72,9 @@ def contact(request):
 
 def about(request):
     return render(request,"about.html",{})
+
+def search(request):
+    return render(request,"searchsection.html",{})
 
 def team(request):
     return render(request,"team.html",{})

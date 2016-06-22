@@ -23,11 +23,11 @@ urlpatterns = [
     url(r'^accounts/', include('registration.backends.default.urls')),
     # url(r'^contact/', include('SearchCourse.urls')),
 
-    url(r'^home/$','Homepage.views.home', name = 'home'),
+    url(r'^$','Homepage.views.home', name = 'home'),
+    url(r'^search/$','Homepage.views.search', name = 'search'),
     url(r'^about/$','Homepage.views.about', name = 'about'),
     url(r'^team/$','Homepage.views.team', name = 'team'),
     url(r'^contact/$','Homepage.views.contact', name = 'contact'),
-    url(r'^rating/', include('Rates.urls')),
     url(r'^course/', include('SearchCourse.urls'),name = 'course'),
     url(r'^ratings/', include('star_ratings.urls', namespace='ratings', app_name='ratings')),
 ]

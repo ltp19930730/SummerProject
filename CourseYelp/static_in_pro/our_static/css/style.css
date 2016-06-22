@@ -6,7 +6,7 @@ http://www.tooplate.com/view/2078-adventure
 
 */
 
-/* Body 
+/* Body
 ------------------------------------- */
 body {
     background: #ffffff;
@@ -107,7 +107,7 @@ hr {
   font-weight: bold;
 }
 
-#work, #about, #team, 
+#work, #about, #team,
 #portfolio, #plan, #contact {
 	padding-top: 120px;
 	padding-bottom: 100px;
@@ -194,8 +194,8 @@ hr {
 }
 
 .custom-navbar .nav li {
-  
-}    
+
+}
 
 .custom-navbar .nav li a {
 	display: block;
@@ -751,7 +751,7 @@ footer h2 {
 
 
 /*------------------------------------------------------
-  RESPONSIVE STYLES 
+  RESPONSIVE STYLES
 --------------------------------------------------------*/
 @media (max-width: 1200px) {
   .bx-thumbnail-wrapper {
@@ -784,7 +784,7 @@ footer h2 {
 }
 
 @media (max-width: 768px) {
-  
+
   #about .mobile-top {
     padding-top: 32px;
   }
@@ -845,4 +845,17 @@ footer h2 {
   h5 {
     font-size: 11px;
   }
+}
+
+
+.widget .tag-cloud a {
+  border: 1px solid #ebebeb;
+  padding: 2px 7px;
+  color: #959595;
+  line-height: 1.5em;
+  display: inline-block;
+  margin: 0 7px 7px 0;
+  -webkit-transition: all 0.2s ease;
+       -o-transition: all 0.2s ease;
+          transition: all 0.2s ease;
 }
