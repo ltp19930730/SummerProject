@@ -10,7 +10,6 @@ class CourseData(models.Model):
         course_video_url = models.URLField(blank = True, null = True)
         course_homepage_url = models.URLField(blank = True, null = True)
         course_intro = models.TextField()
-
         tags = models.ManyToManyField('Tag', blank=True)
         def __str__(self):
             return self.course_name

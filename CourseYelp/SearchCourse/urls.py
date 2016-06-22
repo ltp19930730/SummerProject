@@ -7,4 +7,5 @@ urlpatterns = [
     url(r'^$', 'SearchCourse.views.archives'),
     url(r'^search/$','SearchCourse.views.web_search'),
     url(r'^(?P<id>\d+)/$', 'SearchCourse.views.course_detail'),
+     url(r'^(?P<tag>\w+)/$', 'SearchCourse.views.search_tag', name = 'search_tag'),
 ]

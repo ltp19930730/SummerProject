@@ -45,3 +45,10 @@ def course_detail(request,id):
         "instance":instance,
     }
     return render(request,'course_detail.html',context)
+
+def search_tag(request,tag) :
+    try:
+        course_list = CourseData.objects.filter(tags__name__startswith=tag) #contains
+    except CourseData.DoesNotExist :
+        raise Http404
+    return render(request, 'searchresult.html', {'course_list' : course_list})

@@ -2,36 +2,18 @@ from django.shortcuts import render
 from .forms import ContactForm,SignUpForm
 from django.core.mail import send_mail
 from django.conf import settings
+from SearchCourse.models import Tag
 # Create your views here.
 
 def home(request):
-    title = 'Welcome'
-    # if request.user.is_authenticated():
-    #     title = "My Title %s" %(request.user)
-
-    #add a form
-    # if request.method == "POST":
-    #     print (request.POST)
-    form = SignUpForm(request.POST or None)
-
+    tags_list = Tag.objects.all().order_by('name')
+    for tagger in tags_list:
+        print(tagger)
     context = {
-        "title" : title,
-        "form" : form,
+            "tags_list":tags_list,
     }
+    return render(request, 'home.html', context)
 
-    if form.is_valid():
-        instance = form.save(commit=False)
-        #print (request.POST['email'])
-        full_name = form.cleaned_data.get("full_name")
-        if not full_name:
-            full_name = "New full name"
-        instance.full_name = full_name
-        instance.save()
-
-        context = {
-            "title" : "Thank you"
-        }
-    return render(request,"home.html",context)
 
 def contact(request):
     title = 'Contact Us'
@@ -69,6 +51,7 @@ def contact(request):
         "form": form,
     }
     return render(request,"forms.html",context)
+
 
 def about(request):
     return render(request,"about.html",{})
