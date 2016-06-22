@@ -21,13 +21,12 @@
     <a href="/keywords">See more »</a>
     </small>
     </h3>
-    {% for tagger in tags_list %}
+    {% for tag in tags_list %}
       <div class="row">
           <div class="keyword col-xs-6 col-sm-4 col-md-3">
             <h4>
               <div class="blurb">
-              <a href="/course/{{tagger.name}}">{{ tagger.name }}</a>
-
+              <a href="/course/{{tag.name}}">{{ tag.name }}</a>
               </div>
             </h4>
           </div>

@@ -16,33 +16,9 @@
 <body>
 
 {% include 'navbar.html' %}
-    <div class="container">
-        <div class = "row">
 
             {% block content %}
             {% endblock %}
 
-        </div>
-    </div>
-
-<div style="position: fixed;top: 200px;left:30px;">
-  <div class="sidebar-module">
-    <aside class="col-md-2 sidebar">
-
-    <div class="widget">
-    	<h4 class="title">Brand</h4>
-    	<div class="content tag-cloud">
-    		<a href="/course/search/?s=Machine">Machine Learning</a>
-        <a href="/course/search/?s=Algorithm">Algorithm</a>
-        <a href="/tag/opensource/">Math</a>
-
-
-
-    		<a href="/tag-cloud/">...</a>
-    	</div>
-    </div>
-    </aside>
-  </div>
-</div>
 </body>
 </html>

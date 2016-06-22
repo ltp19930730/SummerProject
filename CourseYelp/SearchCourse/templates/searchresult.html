@@ -2,6 +2,8 @@
 {% load staticfiles %}
 
 {% block content %}
+<div class="container">
+    <div class = "row">
 
     {% if error %}
         <h2 >Fail to find the course！</h2>
@@ -27,9 +29,10 @@
           </div>
 
     {% endfor %}
-
+  </div>
+</div>
+  <div class = "row">
     {% if course_list.object_list and course_list.paginator.num_pages > 1 %}
-      <div>
       <ul class="pager">
       {% if course_list.has_previous %}
         <li><a href="?page={{ course_list.previous_page_number }}">Page Up</a></li>
@@ -39,9 +42,30 @@
         <li><a href="?page={{ course_list.next_page_number }}">Page Down</a></li>
       {% endif %}
       </ul>
-      </div>
+
+    </div>
     {% endif %}
 
     {% endif %}
+
+    <div style="position: fixed;top: 200px;left:30px;">
+      <div class="sidebar-module">
+        <aside class="col-md-2 sidebar">
+
+        <div class="widget">
+        	<h4 class="title">Brand</h4>
+        	<div class="content tag-cloud">
+            {% for tag in tags_list %}
+            <a href="/course/{{tag.name}}">{{ tag.name }}</a>
+            {% endfor %}
+        	</div>
+        </div>
+        </aside>
+      </div>
+    </div>
+
+
+
+
 
 {% endblock %}

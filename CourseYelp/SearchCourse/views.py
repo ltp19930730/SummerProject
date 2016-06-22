@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
-from SearchCourse.models import CourseData
+from SearchCourse.models import CourseData,Tag
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 # Create your views here.
 
@@ -10,6 +10,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 def archives(request) :
     try:
         course_list = CourseData.objects.all().order_by('course_name')
+        tags_list = Tag.objects.all().order_by('name')
         paginator = Paginator(course_list,8)
         page = request.GET.get('page')
         try:
@@ -20,7 +21,7 @@ def archives(request) :
             course_list = paginator.paginator(paginator.num_pages)
     except CourseData.DoesNotExist :
         raise Http404
-    return render(request, 'searchresult.html', {'course_list' : course_list,
+    return render(request, 'searchresult.html', {'course_list' : course_list,'tags_list': tags_list,
                                             'error' : False})
 
 def web_search(request):
@@ -30,11 +31,12 @@ def web_search(request):
             return render(request,'searchsection.html')
         else:
             course_list = CourseData.objects.filter(course_name__icontains = s)
+            tags_list = Tag.objects.all().order_by('name')
             if len(course_list) == 0 :
-                return render(request,'searchresult.html',{'course_list':course_list,
+                return render(request,'searchresult.html',{'course_list':course_list,'tags_list': tags_list,
                                                     'error' : True})
             else :
-                return render(request,'searchresult.html',{'course_list':course_list,
+                return render(request,'searchresult.html',{'course_list':course_list,'tags_list': tags_list,
                                                     'error' : False})
     return redirect('/')
 
@@ -49,6 +51,8 @@ def course_detail(request,id):
 def search_tag(request,tag) :
     try:
         course_list = CourseData.objects.filter(tags__name__startswith=tag) #contains
+        tags_list = Tag.objects.all().order_by('name')
     except CourseData.DoesNotExist :
         raise Http404
-    return render(request, 'searchresult.html', {'course_list' : course_list})
+    return render(request, 'searchresult.html', {'course_list' : course_list,
+                                            'tags_list': tags_list})
