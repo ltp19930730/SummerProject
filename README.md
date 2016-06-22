@@ -1,2 +1,4 @@
 # Summer Project start
-Using Django
+> Members: Tianpei Luo,Song Nan,Xining Li, Borui Xia,Chengyang Liu
+
+Using Django as the back-end.
