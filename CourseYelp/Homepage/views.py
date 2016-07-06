@@ -7,8 +7,7 @@ from SearchCourse.models import Tag
 
 def home(request):
     tags_list = Tag.objects.all().order_by('name')
-    for tagger in tags_list:
-        print(tagger)
+
     context = {
             "tags_list":tags_list,
     }

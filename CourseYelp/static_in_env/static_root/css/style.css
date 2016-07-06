@@ -6,7 +6,7 @@ http://www.tooplate.com/view/2078-adventure
 
 */
 
-/* Body 
+/* Body
 ------------------------------------- */
 body {
     background: #ffffff;
@@ -107,7 +107,7 @@ hr {
   font-weight: bold;
 }
 
-#work, #about, #team, 
+#work, #about, #team,
 #portfolio, #plan, #contact {
 	padding-top: 120px;
 	padding-bottom: 100px;
@@ -194,8 +194,8 @@ hr {
 }
 
 .custom-navbar .nav li {
-  
-}    
+
+}
 
 .custom-navbar .nav li a {
 	display: block;
@@ -703,55 +703,11 @@ figure.effect-zoe:hover p.icon-links a:first-child {
   border-right: 4px solid #000000;
 }
 
-
-/* footer section styles
-/* ========================================== */
-footer {
-  background: #f9f9f9;
-  text-align: center;
-  padding-top: 120px;
-  padding-bottom: 120px;
+.jumbotron {
+background-image:url('http://goo.gl/04j7Nn');
 }
-
-footer h2 {
-  border: 4px solid #000000;
-  display: inline-block;
-  padding: 12px 32px 12px 32px;
-  margin-bottom: 32px;
-}
-
-.social-icon {
-  padding: 0;
-  margin: 0;
-}
-
-.social-icon li {
-  list-style: none;
-  display: inline-block;
-  padding: 6px;
-}
-
-.social-icon li a {
-  color: #000000;
-  font-size: 20px;
-  font-weight: 300;
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
-  text-align: center;
-  text-decoration: none;
-  transition: all 0.4s ease-in-out;
-  margin: 0 8px 14px 8px;
-}
-
-.social-icon li a:hover {
-  background: #000000;
-  color: #ffffff;
-}
-
-
 /*------------------------------------------------------
-  RESPONSIVE STYLES 
+  RESPONSIVE STYLES
 --------------------------------------------------------*/
 @media (max-width: 1200px) {
   .bx-thumbnail-wrapper {
@@ -784,7 +740,7 @@ footer h2 {
 }
 
 @media (max-width: 768px) {
-  
+
   #about .mobile-top {
     padding-top: 32px;
   }
@@ -845,4 +801,17 @@ footer h2 {
   h5 {
     font-size: 11px;
   }
+}
+
+
+.widget .tag-cloud a {
+  border: 1px solid #ebebeb;
+  padding: 2px 7px;
+  color: #959595;
+  line-height: 1.5em;
+  display: inline-block;
+  margin: 0 7px 7px 0;
+  -webkit-transition: all 0.2s ease;
+       -o-transition: all 0.2s ease;
+          transition: all 0.2s ease;
 }

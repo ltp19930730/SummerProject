@@ -1,0 +1,9 @@
+bootstrap-admin==0.3.6
+Django==1.8.13
+django-admin-bootstrapped==2.5.7
+django-braces==1.9.0
+django-crispy-forms==1.6.0
+django-model-utils==2.5
+django-registration-redux==1.4
+django-star-ratings==0.5.1
+pywin32==220

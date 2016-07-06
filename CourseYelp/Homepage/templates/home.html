@@ -1,8 +1,20 @@
 {% extends "base.html" %}
-
+{% load staticfiles %}
 {% block tag %}
 
+
+
+
+
 <div class="container">
+
+
+
+  <div class="jumbotron">
+    <h1>MOOC</h1>
+    <p class="lead">The massive open-source curriculum for learning to be better. </p>
+    <p><a class="btn btn-lg btn-success" href="{% url 'search' %}"role="button">Find out</a></p>
+  </div>
   <div class="row">
     <div class="col-md-12 leaderboard">
     <h1>SeekForCourses <small>The Open Source Online Course.</small></h1>
@@ -21,17 +33,19 @@
     <a href="/keywords">See more »</a>
     </small>
     </h3>
+    <div class="row">
     {% for tag in tags_list %}
-      <div class="row">
+
           <div class="keyword col-xs-6 col-sm-4 col-md-3">
             <h4>
               <div class="blurb">
-              <a href="/course/{{tag.name}}">{{ tag.name }}</a>
+                <a href="/course/{{tag.name}}">{{ tag.name }}</a>
               </div>
             </h4>
           </div>
-      </div>
+
     {% endfor %}
+     </div>
     </div>
   </div>
 </div>

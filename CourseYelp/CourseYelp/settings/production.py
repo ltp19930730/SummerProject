@@ -145,14 +145,15 @@ if not settings.DEBUG:
 
         STATIC_URL = '/static/'
 
-        STATIC_ROOT = os.path.join(BASE_DIR,"static_in_env","static_root")
+        STATIC_ROOT = '/home/tluo4/webapps/seekcourse_static/'
+        # STATIC_ROOT = os.path.join(BASE_DIR,"static_in_env","static_root")
 
         STATICFILES_DIRS = (
             os.path.join(BASE_DIR,"static_in_pro","our_static"),
         )
 
         MEDIA_URL = '/media/'
-        MEDIA_ROOT = os.path.join(BASE_DIR,"static_in_env","media_root")
+        MEDIA_ROOT = '/home/tluo4/webapps/seekcourse_media/'
 
 
         CRISPY_TEMPLATE_PACK = 'bootstrap3'
