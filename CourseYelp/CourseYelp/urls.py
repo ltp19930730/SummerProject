@@ -25,7 +25,7 @@ urlpatterns = [
 
     url(r'^$','Homepage.views.home', name = 'home'),
     url(r'^search/$','Homepage.views.search', name = 'search'),
-    url(r'^about/$','Homepage.views.about', name = 'about'),
+    url(r'^master/$','Homepage.views.master', name = 'master'),
     url(r'^team/$','Homepage.views.team', name = 'team'),
     url(r'^contact/$','Homepage.views.contact', name = 'contact'),
     url(r'^course/', include('SearchCourse.urls'),name = 'course'),

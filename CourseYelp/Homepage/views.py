@@ -52,8 +52,8 @@ def contact(request):
     return render(request,"forms.html",context)
 
 
-def about(request):
-    return render(request,"about.html",{})
+def master(request):
+    return render(request,"master.html",{})
 
 def search(request):
     return render(request,"searchsection.html",{})
